@@ -24,4 +24,11 @@ public class TablaAsignacionTest {
 		assertEquals('T', tabla.getLetra(0));
 		assertEquals('E' , tabla.getLetra(22));
     }
+    @Test
+    public void letraNoPermitida() {
+
+        for (char letra : letrasNoPermitidas) {
+            assertFalse(tabla.isLetraPermitida(letra));
+        }
+    }
 }
