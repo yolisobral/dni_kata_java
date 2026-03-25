@@ -2,38 +2,24 @@ package edu.teamrocket;
 
 public class Dni {
 
-    private final int numero;
-    private final char letra;
+    private final String dni;
 
-    public Dni(int numero) {
-        this.numero = numero;
-        this.letra = calcularLetra(numero);
+    private TablaAsignacion tabla = new TablaAsignacion();
+
+    public Dni(String dni) {
+        this.dni = dni;
     }
 
-    public int getNumero() {
-        return numero;
+    public String getDni() {
+        return this.dni;
     }
 
-    public int setNumero() {
-        return this.numero;
+    String extraerParteNumericaDni() {
+        return (String) dni.substring(0, dni.length() - 1);
     }
 
-    public char getLetra() {
-        return letra;
-    }
+    Boolean isDniNumero(String Cadena ){
 
-    public char setLetra() {
-        return this.letra;
-    }
-
-    private char calcularLetra(int numero) {
-        char[] tabla = {'T', 'R', 'W', 'A', 'G', 'M', 
-                     	 'Y', 'F', 'P', 'D', 'X', 'B', 
-                         'N', 'J', 'Z', 'S', 'Q', 'V', 
-                         'H', 'L', 'C', 'K', 'E'};
-        return tabla[numero % 23];
-    }
-
-    
-
+        return  true;
+    };
 }
