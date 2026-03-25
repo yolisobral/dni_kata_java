@@ -26,5 +26,24 @@ class TablaAsignacion {
         return  false;
     }
 
-}
+    public int getModulo() {
+        return  this.tabla.length;}
+
+    public char calcularLetra(String numeroDni){
+        int numero = Integer.parseInt(numeroDni);
+        int posicion = numero % getModulo();
+        return getLetra(posicion);}
+
+    @Override
+    public String toString() {
+        return java.util.Arrays.toString(tabla);
+    }
+
+    public static void main(String[] args) {
+        TablaAsignacion tabla = new TablaAsignacion();
+        System.out.println(tabla);
+    }
+
+    }
+
 
